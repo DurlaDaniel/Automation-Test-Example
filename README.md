@@ -1,4 +1,4 @@
-Below is a automation test example , that i wrote  while working on projects.
+Below are some automations test example , that i wrote  while working on projects.
 
 .........................................
 
@@ -51,3 +51,35 @@ describe ('eMag.ro' , () =>{
     });
 
 })
+
+.........................................
+
+describe('cel.ro' , () =>{
+    it('should have to correct page title' , async () =>{
+        await browser.url('https://www.cel.ro');
+        await expect(browser).toHaveTitle('CEL.ro - Cel mai Cel Marketplace');
+    })
+
+    it('veziProduseleZilei button should be displayed' , async () =>{
+        const veziProdseleZileiButton = $ ('#oferteleSaptamaniiBtn');
+        await expect(veziProdseleZileiButton).toBeDisplayed();
+    })
+
+    it('veziProduseleZilei button should work' , async () => {
+        const veziProdseleZileiButton = $('#oferteleSaptamaniiBtn');
+        await veziProdseleZileiButton.click();
+        
+    })
+    
+    it('inapoiPeSite button should be displayed and work' , async () =>{
+        const inapoiPeSiteButton = $('/html/body/header/div[1]/div[2]/a[1]');
+        await expect(inapoiPeSiteButton).toBeDisplayed();
+        await inapoiPeSiteButton.click();
+    })
+
+    it('chat button should be displayed' ,async () => {
+        const chatButton = $('/html/body/div/div/button');
+        await expect(chatButton).toBeDisplayed;
+    })
+
+} )
