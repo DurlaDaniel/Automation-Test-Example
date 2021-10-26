@@ -55,6 +55,7 @@ describe ('eMag.ro' , () =>{
 .........................................
 
 describe('cel.ro' , () =>{
+
     it('should have to correct page title' , async () =>{
         await browser.url('https://www.cel.ro');
         await expect(browser).toHaveTitle('CEL.ro - Cel mai Cel Marketplace');
